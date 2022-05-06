@@ -13,11 +13,14 @@ namespace WebAPI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //Especifica la ruta y estructura, que se debe seguir por defecto
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
+
+       //Aquí podemos especificar que fue por ruta
     }
 }
