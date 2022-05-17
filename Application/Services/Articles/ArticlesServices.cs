@@ -21,6 +21,8 @@ namespace Application.Services.Articles
 
         public string Create(Article article)
         {
+            article.Id = Guid.NewGuid().ToString();
+
            return _memoryStorage.Create(article);
         }
 
