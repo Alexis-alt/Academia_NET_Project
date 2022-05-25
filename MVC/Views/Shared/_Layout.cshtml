@@ -37,10 +37,20 @@
                             </div>
                         </li>
 
+                        <li class="">@Html.ActionLink("LogOff", "LogOff", "Account", new { area = "Identity" }, null)</li>
+
+
+                    }
+                    else
+                    {
+
+                        <li class="">@Html.ActionLink("Login", "Login", "Account", new { area = "Identity" }, null)</li>
+                        <li class="top-right">@Html.ActionLink("Register", "Register", "Register", new { area = "Identity" }, null)</li>
+
+
+
                     }
 
-                    <li class="">@Html.ActionLink("Login", "Login", "Account", new { area = "Identity" }, null)</li>
-                    <li class="top-right">@Html.ActionLink("Register", "Register", "Register", new { area = "Identity" }, null)</li>
 
 
                 </ul>
