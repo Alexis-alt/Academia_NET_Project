@@ -12,25 +12,25 @@ namespace Persistence
     {
         private static List<T> _list = new List<T>();
 
-        public string Create(T item)
+        public void Create(T item)
         {
                 _list.Add(item);
 
-            return item.Id;
+    
 
         }
 
-        public string Delete(string id)
+        public void Delete(int id)
         {
             var elementToDelete = _list.Where(i=>i.Id == id).FirstOrDefault();
 
             _list.Remove(elementToDelete);
 
-            return elementToDelete.Id;
+
 
         }
 
-        public string Edit(T item)
+        public void Edit(T item)
         {
             var elementToUpdate = _list.Where(i => i.Id == item.Id).FirstOrDefault();
 
@@ -38,7 +38,7 @@ namespace Persistence
 
             _list.Add(item);
 
-            return item.Id;
+
 
         }
 
@@ -47,7 +47,7 @@ namespace Persistence
             return _list;
         }
 
-        public T GetById(string id)
+        public T GetById(int id)
         {
             var item = _list.Find(i=>i.Id==id);
 
