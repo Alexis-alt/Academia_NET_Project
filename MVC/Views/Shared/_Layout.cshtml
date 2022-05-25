@@ -17,23 +17,42 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("WHAREHOUSE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
 
                 <ul class="nav navbar-nav">
 
-                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" },null)</li>
+                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, null)</li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Administración
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="@Url.Action("Index","Articles",new {area="Admin" })">Articulos</a>
-                            
-                        </div>
-                    </li>
+                    @if (this.User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Administración
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="@Url.Action("Index","Articles",new {area="Admin" })">Articulos</a>
+
+                            </div>
+                        </li>
+
+                        <li class="">@Html.ActionLink("LogOff", "LogOff", "Account", new { area = "Identity" }, null)</li>
+
+
+                    }
+                    else
+                    {
+
+                        <li class="">@Html.ActionLink("Login", "Login", "Account", new { area = "Identity" }, null)</li>
+                        <li class="top-right">@Html.ActionLink("Register", "Register", "Register", new { area = "Identity" }, null)</li>
+
+
+
+                    }
+
+
+
                 </ul>
 
             </div>

@@ -1,0 +1,75 @@
+﻿
+@model MVC.Areas.Identity.ViewModels.LoginViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+
+        @using (Html.BeginForm("Login", "Account", new { area = "Identity" }, FormMethod.Post))
+        {
+
+            @Html.AntiForgeryToken()
+            <h4>Inicio de sesión</h4>
+            <hr />
+            @Html.ValidationSummary(true, "")
+            <div>
+                @Html.LabelFor(m => m.Email)
+                <div>
+                    @Html.TextBoxFor(m => m.Email)
+                    @Html.ValidationMessageFor(m => m.Email, "")
+                </div>
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Password)
+                <div>
+                    @Html.PasswordFor(m => m.Password)
+                    @Html.ValidationMessageFor(m => m.Password, "")
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="submit" value="Log in" />
+             
+                    <a>@Html.ActionLink("Sing up", "Register", "Register", new { area = "Identity" }, null)</a>
+
+                </div>
+            </div>
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

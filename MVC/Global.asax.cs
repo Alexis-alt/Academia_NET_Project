@@ -8,10 +8,18 @@ using System.Web.Routing;
 
 namespace MVC
 {
+    //Aquí se inicializa la aplicación
+
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
+            //Inicializa las configuraciones
+
+            //Resuelve las dependencias antes de inicalizar los controllers, rutas, etc. 
+            IoCConfig.RegisterDependencies();
+
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
