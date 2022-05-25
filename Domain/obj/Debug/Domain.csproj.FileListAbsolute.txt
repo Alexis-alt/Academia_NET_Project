@@ -1,6 +1,7 @@
 C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Domain\bin\Debug\Domain.dll
 C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Domain\bin\Debug\Domain.pdb
-C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
 C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Domain\obj\Debug\Domain.dll
 C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Domain\obj\Debug\Domain.pdb
+C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Domain\bin\Debug\Domain.dll.config
+C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache

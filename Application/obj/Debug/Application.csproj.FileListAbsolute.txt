@@ -7,3 +7,6 @@ C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Application\obj\Debug\Appli
 C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Application\obj\Debug\Application.csproj.CopyComplete
 C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Application\obj\Debug\Application.dll
 C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Application\obj\Debug\Application.pdb
+C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Application\bin\Debug\Domain.dll.config
+C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Application\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\alexi\Documents\GitHub\Academia_NET_Project\Application\bin\Debug\Microsoft.AspNet.Identity.Core.xml

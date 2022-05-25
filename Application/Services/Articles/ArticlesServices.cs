@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Application.Interfaces.Repository;
 using Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -13,37 +14,92 @@ namespace Application.Services.Articles
 
         private readonly IMemoryStorage<Article> _memoryStorage;
 
+        private readonly IContenedorTrabajo _contenedorTrabajo;
+
+
+
+        public ArticlesServices( IContenedorTrabajo contenedorTrabajo)
+        {
+           
+            _contenedorTrabajo = contenedorTrabajo;
+        }
+
+
         public ArticlesServices(IMemoryStorage<Article> memoryStorage)
         {
             _memoryStorage = memoryStorage;
         }
 
 
-        public string Create(Article article)
+        public void Create(Article article)
         {
-            article.Id = Guid.NewGuid().ToString();
 
-           return _memoryStorage.Create(article);
+           
+            
+            /*MemoryStorage
+             * 
+             return _memoryStorage.Create(article);
+
+            */
+
+            _contenedorTrabajo.Article.Add(article);
+
+            _contenedorTrabajo.Save();
+
+  
         }
 
-        public string Edit(Article article)
+
+        public void Edit(Article article)
         {
-            return _memoryStorage.Edit(article);
+
+            /* MemoryStorage
+             * 
+            _memoryStorage.Edit(article);
+
+            */
+
+            _contenedorTrabajo.Article.Update(article);
+
+            _contenedorTrabajo.Save();
+
+
         }
 
-        public string Delete(string id)
+
+        public void Delete(int id)
         {
-            return _memoryStorage.Delete(id);
+            /*MemoryStorage
+            _memoryStorage.Delete(id);
+            */
+
+            _contenedorTrabajo.Article.Remove(id);
+
+            _contenedorTrabajo.Save();
+
         }
 
         public List<Article> GetAll()
         {
-            return _memoryStorage.GetAll();
+
+            /*MemoryStorage
+             * 
+              _memoryStorage.GetAll();
+             
+             */
+            return _contenedorTrabajo.Article.GetAll().ToList();
         }
 
-        public Article GetById(string id)
+        public Article GetById(int id)
         {
-            return _memoryStorage.GetById(id);
+            /*MemoryStorage
+             
+            _memoryStorage.GetById(id);
+
+             */
+
+
+            return _contenedorTrabajo.Article.GetById(id);
         }
 
 

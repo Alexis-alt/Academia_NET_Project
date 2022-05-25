@@ -9,15 +9,15 @@ namespace Application.Interfaces
     public interface IMemoryStorage<T>
     {
 
-        string Create(T item);
+        void Create(T item);
 
-        string Edit(T item);
+        void Edit(T item);
 
-        string Delete(string id);
+        void Delete(int id);
 
         List<T> GetAll();
 
-        T GetById(string id);
+        T GetById(int id);
 
 
     }
